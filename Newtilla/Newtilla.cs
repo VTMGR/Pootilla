@@ -34,12 +34,13 @@ namespace Newtilla
         void Start()
         {
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), Info.Metadata.GUID);
+            GorillaTagger.OnPlayerSpawned(OnPlayerSpawned);
             StartCoroutine(WaitForGameModeSelector());
-            OnLeaveModded += OnModdedLeave;
         }
-        void OnModdedLeave(string mode)
+
+        void OnPlayerSpawned()
         {
-            Debug.Log("Left " + mode);
+            Utilla.Events.TriggerGameInitialized();
         }
 
         IEnumerator WaitForGameModeSelector()

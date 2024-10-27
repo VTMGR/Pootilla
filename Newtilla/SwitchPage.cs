@@ -4,7 +4,7 @@
     {
         public bool isNext;
 
-        public override void ButtonActivationWithHand(bool isLeftHand)
+        public override void ButtonActivation()
         {
             if (isNext)
             {
