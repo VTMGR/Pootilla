@@ -39,7 +39,7 @@ public class TestMod : BaseUnityPlugin
 {
     void Start()
     {
-        //This creates and adds the mode to the mode selector
+        //This creates and adds the mode to the mode selector, OnModeJoined and OnModeLeft aren't required.
         Newtilla.Newtilla.AddGameMode("TESTMODE", "TESTMODE", BaseGamemode.HUNT, false, OnModeJoined, OnModeLeft);
     }
 
