@@ -17,6 +17,7 @@ namespace Newtilla
                 }
                 if (Newtilla.JoinActions.ContainsKey(GameMode))
                     Newtilla.JoinActions[GameMode]();
+                Utilla.Events.TriggerRoomJoin(new Utilla.Events.RoomJoinedArgs { Gamemode = GameMode, isPrivate = !PhotonNetwork.CurrentRoom.IsVisible });
             }
             //Do nothing because if the substring fails we don't need to do anything anyway lol
             catch
@@ -35,6 +36,7 @@ namespace Newtilla
                 if (Newtilla.LeaveActions.ContainsKey(GameMode))
                     Newtilla.LeaveActions[GameMode]();
                 Newtilla.currentMode = string.Empty;
+                Utilla.Events.TriggerRoomLeft(new Utilla.Events.RoomJoinedArgs { Gamemode = GameMode, isPrivate = false });
             }
             //Do nothing because if the substring fails we don't need to do anything anyway lol
             catch
