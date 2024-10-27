@@ -1,5 +1,5 @@
 # Newtilla
-A stable rewrite of Utilla using mostly harmony patches, this version should be less prone to breaking and much simpler
+A stable rewrite of Utilla that update dynamically using mostly harmony patches, this version should be less prone to breaking and is much simpler.
 
 # Examples:
 
