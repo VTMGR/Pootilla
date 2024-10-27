@@ -1,3 +1,5 @@
+Original mod by [legoandmars](https://github.com/legoandmars/Utilla).
+
 # Newtilla
 A stable rewrite of Utilla that update dynamically using mostly harmony patches, this version should be less prone to breaking and is much simpler.
 
