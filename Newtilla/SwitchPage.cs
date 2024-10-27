@@ -1,4 +1,7 @@
-﻿namespace Newtilla
+﻿using System.Collections;
+using UnityEngine;
+
+namespace Newtilla
 {
     public class SwitchPage : GorillaPressableButton
     {
@@ -26,6 +29,14 @@
                 }
                 Newtilla.UpdateDisplayedGameModes();
             }
+            StartCoroutine(ButtonColorUpdate());
+        }
+
+        private IEnumerator ButtonColorUpdate()
+        {
+            buttonRenderer.material = pressedMaterial;
+            yield return new WaitForSeconds(0.25f);
+            buttonRenderer.material = unpressedMaterial;
         }
     }
 }

@@ -40,7 +40,14 @@ namespace Newtilla
 
         void OnPlayerSpawned()
         {
-            Utilla.Events.TriggerGameInitialized();
+            try
+            {
+                Utilla.Events.TriggerGameInitialized();
+            }
+            catch
+            {
+
+            }
         }
 
         IEnumerator WaitForGameModeSelector()
