@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Newtilla
 {
-    [BepInPlugin("Lofiat.Newtilla", "Newtilla", "1.0.0")]
+    [BepInPlugin("Lofiat.Newtilla", "Newtilla", "1.0.1")]
     public class Newtilla : BaseUnityPlugin
     {
         internal static Dictionary<string, Action> JoinActions = new Dictionary<string, Action>();
