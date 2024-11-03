@@ -4,10 +4,10 @@
 Original mod by [legoandmars](https://github.com/legoandmars/Utilla).
 
 # Newtilla
-A stable rewrite of Utilla that update dynamically using mostly harmony patches, this version should be less prone to breaking and is much simpler.
+A stable rewrite of Utilla that updates dynamically using mostly harmony patches, this version should be less prone to breaking and is much simpler.
 
 # Installation
-First, get the original [Utilla](https://github.com/legoandmars/Utilla), and put it in your plugins. Then download [Newtilla](https://github.com/Loafiat/Newtilla/releases) and put that in your plugins aswell. Your done, enjoy!
+First, download [Newtilla](https://github.com/Loafiat/Newtilla/releases) and put that in your plugins. Optionally, you can download the original [Utilla](https://github.com/legoandmars/Utilla) aswell, I'd recommend it as most mods won't work without it. Your done, enjoy!
 
 # Examples:
 
