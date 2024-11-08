@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Newtilla
 {
-    [BepInPlugin("Lofiat.Newtilla", "Newtilla", "1.0.1")]
+    [BepInPlugin("Lofiat.Newtilla", "Newtilla", "1.1.0")]
     public class Newtilla : BaseUnityPlugin
     {
         internal static Dictionary<string, Action> JoinActions = new Dictionary<string, Action>();
@@ -34,20 +34,7 @@ namespace Newtilla
         void Start()
         {
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), Info.Metadata.GUID);
-            GorillaTagger.OnPlayerSpawned(OnPlayerSpawned);
             StartCoroutine(WaitForGameModeSelector());
-        }
-
-        void OnPlayerSpawned()
-        {
-            try
-            {
-                Utilla.Events.TriggerGameInitialized();
-            }
-            catch
-            {
-
-            }
         }
 
         IEnumerator WaitForGameModeSelector()

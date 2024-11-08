@@ -8,6 +8,10 @@ namespace Newtilla.Patches
     [HarmonyPatch(typeof(GameModeSelectorButtonLayout), "Start")]
     public class GamemodeLayoutPatch
     {
+        static Transform NextPage;
+
+        static Transform PrevPage;
+
         static void Prefix(GameModeSelectorButtonLayout __instance)
         {
             foreach (Transform tr in __instance.transform)
@@ -15,15 +19,15 @@ namespace Newtilla.Patches
                 Object.Destroy(tr.gameObject);
             }
 
-            if (!__instance.transform.parent.Find("NextPage"))
+            if (!NextPage)
             {
                 ModeSelectButton modeSelectButton = Object.Instantiate(__instance.pf_button, __instance.transform.parent);
                 modeSelectButton.transform.localPosition = new Vector3(-0.608f, 0.276f, 0.179f);
                 modeSelectButton.transform.localRotation = Quaternion.Euler(0f, 0f, 270f);
                 modeSelectButton.SetInfo(Newtilla.PageButtonInfo);
-                Transform Page = modeSelectButton.transform;
-                Page.gameObject.name = "NextPage";
-                SwitchPage PageButton = Page.AddComponent<SwitchPage>();
+                NextPage = modeSelectButton.transform;
+                NextPage.gameObject.name = "NextPage";
+                SwitchPage PageButton = NextPage.AddComponent<SwitchPage>();
                 PageButton.isNext = true;
                 PageButton.buttonRenderer = modeSelectButton.buttonRenderer;
                 PageButton.pressedMaterial = modeSelectButton.pressedMaterial;
@@ -31,15 +35,15 @@ namespace Newtilla.Patches
                 Object.Destroy(modeSelectButton);
             }
 
-            if (!__instance.transform.parent.Find("PrevPage"))
+            if (!PrevPage)
             {
                 ModeSelectButton modeSelectButton = Object.Instantiate(__instance.pf_button, __instance.transform.parent);
                 modeSelectButton.transform.localPosition = new Vector3(-0.608f, -0.374f, 0.179f);
                 modeSelectButton.transform.localRotation = Quaternion.Euler(0f, 0f, 270f);
                 modeSelectButton.SetInfo(Newtilla.PageButtonInfo);
-                Transform Page = modeSelectButton.transform;
-                Page.gameObject.name = "PrevPage";
-                SwitchPage PageButton = Page.AddComponent<SwitchPage>();
+                PrevPage = modeSelectButton.transform;
+                PrevPage.gameObject.name = "PrevPage";
+                SwitchPage PageButton = PrevPage.AddComponent<SwitchPage>();
                 PageButton.isNext = false;
                 PageButton.buttonRenderer = modeSelectButton.buttonRenderer;
                 PageButton.pressedMaterial = modeSelectButton.pressedMaterial;

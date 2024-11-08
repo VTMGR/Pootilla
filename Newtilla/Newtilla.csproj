@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BepInUtils\**" />
+    <EmbeddedResource Remove="BepInUtils\**" />
+    <None Remove="BepInUtils\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>$(BepInExAssemblyPath)\0Harmony.dll</HintPath>
     </Reference>
@@ -40,10 +46,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="BepInUtils\" />
   </ItemGroup>
 
 </Project>
