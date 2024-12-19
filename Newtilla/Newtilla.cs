@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using HarmonyLib;
 using System;
 using System.Collections;
@@ -86,11 +86,11 @@ namespace Newtilla
         /// <param name="OnLeave">The method that triggers when this mode is left.</param>
         public static void AddGameMode(string Name, string ID, BaseGamemode baseGamemode, bool EnablesMods, Action OnJoin = null, Action OnLeave = null)
         {
-            GameModes.Add(new ModeSelectButtonInfoData { Mode = EnablesMods ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, ModeTitle = Name});
+            GameModes.Add(new ModeSelectButtonInfoData { Mode = true ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, ModeTitle = Name});
             if (OnJoin != null)
-                JoinActions.Add(EnablesMods ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, OnJoin);
+                JoinActions.Add(true ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, OnJoin);
             if (OnLeave != null)
-                LeaveActions.Add(EnablesMods ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, OnLeave);
+                LeaveActions.Add(true ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, OnLeave);
         }
 
         /// <summary>
@@ -104,11 +104,11 @@ namespace Newtilla
         /// <param name="OnLeave">The method that triggers when this mode is left.</param>
         public static void AddGameMode(string Name, string ID, string baseGamemode, bool EnablesMods, Action OnJoin = null, Action OnLeave = null)
         {
-            GameModes.Add(new ModeSelectButtonInfoData { Mode = EnablesMods ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, ModeTitle = Name });
+            GameModes.Add(new ModeSelectButtonInfoData { Mode = true ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, ModeTitle = Name });
             if (OnJoin != null)
-                JoinActions.Add(EnablesMods ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, OnJoin);
+                JoinActions.Add(true ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, OnJoin);
             if (OnLeave != null)
-                LeaveActions.Add(EnablesMods ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, OnLeave);
+                LeaveActions.Add(true ? "MODDED_" : "CUSTOM_" + ID + baseGamemode, OnLeave);
         }
 
         internal static void UpdateDisplayedGameModes()
