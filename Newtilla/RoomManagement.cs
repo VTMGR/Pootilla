@@ -1,4 +1,6 @@
-﻿using GorillaNetworking;
+using BepInEx.Logging;
+using GorillaGameModes;
+using GorillaNetworking;
 using Photon.Pun;
 
 namespace Newtilla
@@ -9,16 +11,15 @@ namespace Newtilla
         {
             try
             {
-                string GameMode = ((string)PhotonNetwork.CurrentRoom.CustomProperties["gameMode"]).Replace(PhotonNetworkController.Instance.currentJoinTrigger.networkZone, "").Replace(GorillaComputer.instance.currentQueue, "");
-                Newtilla.currentMode = GameMode;
-                if (GameMode.Substring(0, 7) == "MODDED_")
-                {
-                    Newtilla.TriggerOnJoin(GameMode);
-                }
-                if (Newtilla.JoinActions.ContainsKey(GameMode))
-                    Newtilla.JoinActions[GameMode]();
+                PhotonNetwork.CurrentRoom.CustomProperties["gameMode"] = "MODDED_" + (string)PhotonNetwork.CurrentRoom.CustomProperties["gameMode"];
+                string GameMode = "MODDED_CASUAL";
+                Newtilla.currentMode = "MODDED_CASUAL";
+                Newtilla.TriggerOnJoin("MODDED_CASUAL");
+                Logger.CreateLogSource("onjoin").LogWarning("OnJoin Gamemode: "+ "MODDED_CASUAL");
+                
+                if (Newtilla.JoinActions.ContainsKey("MODDED_CASUAL"))
+                    Newtilla.JoinActions["MODDED_CASUAL"]();
             }
-            //Do nothing because if the substring fails we don't need to do anything anyway lol
             catch
             {
             }
@@ -27,6 +28,7 @@ namespace Newtilla
         {
             try
             {
+                Logger.CreateLogSource("onleave").LogWarning("On Leave Gamemode: " + Newtilla.currentMode);
                 if (Newtilla.currentMode.Substring(0, 7) == "MODDED_")
                 {
                     Newtilla.TriggerOnLeave(Newtilla.currentMode);
@@ -35,7 +37,6 @@ namespace Newtilla
                     Newtilla.LeaveActions[Newtilla.currentMode]();
                 Newtilla.currentMode = string.Empty;
             }
-            //Do nothing because if the substring fails we don't need to do anything anyway lol
             catch
             {
             }
