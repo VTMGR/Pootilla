@@ -7,7 +7,7 @@ Pootilla is a modified version of Newtilla that works the same way as [Ziptilla]
 This is currently made with the version: Nov 7th
 
 # Installation
-First, download [Pootilla](https://github.com/VTMGR/Pootilla/releases) and put that in your plugins. Optionally, you can download the original [Utilla](https://github.com/legoandmars/Utilla) aswell, I'd recommend it as most mods won't work without it. Your done, enjoy!
+First, download [Pootilla](https://github.com/VTMGR/Pootilla/releases) and put that in your plugins. Optionally, you can download [Ziptilla](https://github.com/VTMGR/Ziptilla) aswell, I'd recommend it as most mods won't work without it. Your done, enjoy!
 
 # Disclaimer
 I am not responsible for any restrictions, or suspensions put on your account. What you do with this modified version is at your own risk.
