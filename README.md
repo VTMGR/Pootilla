@@ -1,13 +1,12 @@
-![378217004-09f8e32f-22f7-422b-be3c-4cf276b1527b](https://github.com/user-attachments/assets/1736c692-0d27-46ca-b862-9eae41d56b7a)
+![pootilla](https://github.com/user-attachments/assets/f081b065-f763-427a-aaed-6ce63dff8aca)
 
+Original mod by [Loafiat](https://github.com/Loafiat/Newtilla).
 
-Original mod by [legoandmars](https://github.com/legoandmars/Utilla).
-
-# Newtilla
-A stable rewrite of Utilla that updates dynamically using mostly harmony patches, this version should be less prone to breaking and is much simpler.
+# Pootilla
+A modified version of Newtilla (Version: Nov 7th) With poop mode enabled
 
 # Installation
-First, download [Newtilla](https://github.com/Loafiat/Newtilla/releases) and put that in your plugins. Optionally, you can download the original [Utilla](https://github.com/legoandmars/Utilla) aswell, I'd recommend it as most mods won't work without it. Your done, enjoy!
+First, download [Newtilla](https://github.com/VTMGR/Pootilla/releases) and put that in your plugins. Optionally, you can download the original [Utilla](https://github.com/legoandmars/Utilla) aswell, I'd recommend it as most mods won't work without it. Your done, enjoy!
 
 # Examples:
 
