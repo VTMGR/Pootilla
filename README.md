@@ -10,4 +10,4 @@ This is currently made with the version: Nov 7th
 First, download [Pootilla](https://github.com/VTMGR/Pootilla/releases) and put that in your plugins. Optionally, you can download [Ziptilla](https://github.com/VTMGR/Ziptilla) aswell, I'd recommend it as most mods won't work without it. Your done, enjoy!
 
 # Disclaimer
-I am not responsible for any restrictions, or suspensions put on your account. What you do with this modified version is at your own risk.
+## I am not responsible for any restrictions, or suspensions put on your account. What you do with this modified version is at your own risk.
